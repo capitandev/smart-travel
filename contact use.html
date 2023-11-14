@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Contac Form</title>
+        <meta name="description" content="Contac Form"/>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <section>
+          <h1>CONTACT</h1>
+          <div class="form">
+            <form method="POST" action="">
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <label for="nombre">User Name</label>
+                <input type="text" name="nombre" maxlength="50" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{3,23}" title="Debe indicar su nombre correctamente" required>
+              </div>
+
+              <div class="input-field">
+                <i class="fas fa-mobile-alt"></i>
+                <label for="telefono">User id </label>
+                <input type="telf" name="telefono" maxlength="9" pattern="^[6789]\d{8}$" title="Debe indicar un telefono válido" required>
+              </div>
+
+              <div class="input-field">
+                <i class="fas fa-at"></i>
+                <label for="email">Email</label>
+                <input type="email" name="email" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Debe indicar un correo válido" required>
+              </div>
+
+              <div class="input-field">
+                <i class="fas fa-pen"></i>
+                <label for="mensaje">Message</label>
+                <textarea name="mensaje" rows="10" length="140" required></textarea>
+              </div>
+
+              <div class="btn-block">
+                <button class="btn" type="submit"><i class="fas fa-paper-plane"></i>Send </button>
+              </div>
+
+            </form>
+          </div>
+        </section>
+    </body>
+</html>
+  <style media="screen">
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
+
+    body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1912&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size:cover;
+    background-position: center;
+    height: 100vh;}
+
+    section {
+      padding: 2em 10px;
+    }
+    h1 {
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 2em;
+    }
+    div.form {
+      width: 100%;
+      max-width: 450px;
+      border: 2px solid #fff;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .input-field {
+      position: relative;
+    }
+    .input-field i {
+      color: #fff;
+      margin: 0px 1rem;
+      font-size: 25px;
+      width: 25px;
+      top: -15px;
+      position: relative;
+    }
+    .input-field i.fa-pen {
+      top: -80px;
+      position: relative;
+    }
+    .input-field:active {color; #8FC924;}
+
+    input,
+textarea {
+    margin-left: 3rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff; /* 텍스트 입력 부분의 밑줄 색상 */
+    height: 3rem;
+    margin: 0 0 15px 0;
+    transition: all .3s;
+    width: 80%;
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000; /* 텍스트 색상 */
+}
+    textarea {
+      padding: 1.6rem 0;
+    }
+    label {
+      color: #fff;
+      position: absolute;
+      top: 0.8rem;
+      left: 1.3rem;
+      cursor: text;
+      margin-left: 3rem;
+    }
+    .btn-block {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .btn-block .btn {
+      text-decoration: none;
+      color: #fff;
+      background-color: #57c631;
+      -webkit-transition: .2s ease-out;
+      transition: .2s ease-out;
+      cursor: pointer;
+      border: none;
+      padding: 10px 35px;
+      font-size: 19px;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    .btn-block .btn i {
+      float: right;
+      padding-left: 10px;
+      font-size: 16px;
+      padding-top: 3px;
+    }
+    @media (max-width: 800px) {
+      div.form {width: 90%; padding: 20px 10px;}
+      input, textarea {width: 73%;}
+      .input-field i {margin: 0px 1rem 0px 0.6rem;}
+      label {left: 0.7rem;}
+    }
+
+
+  </style>
+  </body>
+</html>
