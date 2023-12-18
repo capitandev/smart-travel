@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Main CSS Files -->
-    <link rel="stylesheet" href="Smarttrip.css" />
+  
     <!-- 부트스트랩 3에서는 glyphicon 클래스를 사용합니다. -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -15,24 +14,20 @@
 </head>
 
 <body>
-  
 
-    <body>
+
+
+ <body>
 
 <div>
         <!--===========Nav Bar=================-->
-        <section class="nav-bar">
-            <div class="logo">Smart trip  </div>
-            <ul class="menu">
-                <li><a href="index.html.html">home</a></li>
-                <li><a href="contact use.html">contact us</a></li>
-                <li><a href="#">blog</a></li>
-                <li><a href="abou.html">about us</a></li>
-                <li><a href="siginup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-            </div>
-
+<section class="nav-bar">
+    <div class="logo">Smart trip</div>
+    <ul class="menu">
+        <li><a href="./register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="./login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+</section>
 
         <!--===============Banner================-->
         <section class="banner">
@@ -40,39 +35,98 @@
                 <div class="banner-heading">
                     <h1>Find your Next tour!</h1>
                 </div>
-                <form class="form">
-                    <input type="text" list="mylist" placeholder="Where would you like to go?">
-                    <datalist id="mylist">
-                        <option>London</option>
-                        <option>Canada</option>
-                        <option>Monaco</option>
-                        <option>France</option>
-                        <option>Japan</option>
-                        <option>Switzerland</option>
-                        <option>Seoul</option>
-                    </datalist>
-                    <input type="date" class="date">
-                    <a href="#" class="book">book</a>
-                </form>
+                    <!-- 여행지 입력 폼 -->
+    <form class="form">
+      <input type="text" id="destinationInput" list="mylist" placeholder="Where would you like to go?">
+      <datalist id="mylist">
+          <option value="London"></option>
+          <option value="Canada"></option>
+          <option value="Monaco"></option>
+          <option value="France"></option>
+          <option value="Japan"></option>
+          <option value="Switzerland"></option>
+          <option value="Seoul"></option>
+          <option value="Italy"></option>
+          <option value="Australia"></option>
+          <option value="Brazil"></option>
+      </datalist>
+      <a href="#" class="book" id="bookLink">book</a>
+  </form>
+
+  <script>
+      function bookTravel() {
+          // 선택된 여행지 가져오기
+          const selectedDestination = document.getElementById('destinationInput').value;
+
+          // 여행지에 따라 링크 설정
+          let destinationLink;
+          switch (selectedDestination.toLowerCase()) {
+              case 'london':
+                  destinationLink = 'https://www.expedia.com/London.d178279.Destination-Travel-Guides';
+                  break;
+              case 'canada':
+                  destinationLink = 'https://www.tourradar.com/d/canada';
+                  break;
+              case 'monaco':
+                  destinationLink = 'https://www.expedia.co.kr/en/Monaco.d120.Destination-Travel-Guides';
+                  break;
+              case 'france':
+                  destinationLink = 'https://www.tourradar.com/d/france';
+                  break;
+              case 'japan':
+                  destinationLink = 'https://www.expedia.com/Japan.d89.Destination-Travel-Guides';
+                  break;
+              case 'switzerland':
+                  destinationLink = 'https://www.expedia.com/Switzerland.d174.Destination-Travel-Guides';
+                  break;
+              case 'seoul':
+                  destinationLink = 'https://www.expedia.com/Seoul.d178308.Destination-Travel-Guides';
+                  break;
+              case 'italy':
+                  destinationLink = 'https://www.expedia.com/lp/theme-vacations/all-inclusive-vacations/86/Italy';
+                  break;
+              case 'australia':
+                  destinationLink = 'https://www.tourradar.com/d/australia';
+                  break;
+              case 'brazil':
+                  destinationLink = 'https://www.tourradar.com/d/brazil';
+                  break;
+              // 다른 여행지에 대한 case 추가
+          }
+
+          // 선택된 여행지로 이동
+          window.location.href = destinationLink;
+      }
+
+      // 'book' 링크 클릭 시 이벤트 처리
+      document.getElementById('bookLink').addEventListener('click', function (event) {
+          // 이벤트 전파 방지 (기본 동작 중단)
+          event.preventDefault();
+
+          // 'bookTravel' 함수 호출
+          bookTravel();
+      });
+  </script>
+
             </div>
         </section>
 
         <!--=========Services===============-->
         <section class="services">
             <div class="service-item">
-                <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293634/tour-guide_onzla9.png">
+                <img src="https://images.unsplash.com/photo-1534534573898-db5148bc8b0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D">
                 <h2>8000+ Our Local Guides</h2>
             </div>
             <div class="service-item">
-                <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293738/reliability_jbpn4g.png">
+                <img src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHRyYXZlbCUyMGFnZW5jeXxlbnwwfHwwfHx8MA%3D%3D">
                 <h2>100% Trusted Tour Agency</h2>
             </div>
             <div class="service-item">
-                <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293635/experience_a3fduk.png">
+                <img src="https://media.istockphoto.com/id/1467001076/ko/%EC%82%AC%EC%A7%84/%ED%9A%8C%EC%9D%98-%EC%9E%91%EC%97%85-%EC%A4%91-%EC%B9%B4%EB%A9%94%EB%9D%BC-%EC%95%9E%EC%97%90-%EC%84%9C%EC%9E%88%EB%8A%94-%EB%8B%A4%EC%9D%B8%EC%A2%85-%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%98-%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4-%ED%8C%80.webp?b=1&s=170667a&w=0&k=20&c=BU-fo-bpdmfShcUseKkdqrDsPBjiKMnXzVvwOQ4Izao=">
                 <h2>28+ Years of Travel Experience</h2>
             </div>
             <div class="service-item">
-                <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293634/feedback_s8z7d9.png">
+                <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsJTIwaGFwcHl8ZW58MHx8MHx8fDA%3D">
                 <h2>98% Our Travelers are Happy</h2>
             </div>
         </section>
@@ -88,13 +142,13 @@
                     <div class="zoom-img">
                         <div class="img-card">
                             <img
-                                src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293736/james-wheeler_xqmq2y.jpg">
+                                src="https://images.unsplash.com/photo-1519331582073-283f1a211a3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VmFuY291dmVyJTJDJTIwQ2FuYWRhfGVufDB8fDB8fHww">
                         </div>
                     </div>
 
                     <div class="text">
                         <span class="rating">⭐⭐⭐⭐⭐</span>
-                        <h2>The Dark Forest Adventure</h2>
+                        <a href="https://www.tourradar.com/d/canada"><h2>The Dark Forest Adventure</h2></a>
                         <p class="cost">$1870 / Per Person</p>
                         <div class="card-box">
                             <p class="time">🕓 3 Days</p>
@@ -106,7 +160,7 @@
                 <div class="card">
                     <div class="zoom-img">
                         <div class="img-card">
-                            <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293755/paris_uj8wum.jpg">
+                            <img src="https://images.unsplash.com/photo-1583265266785-aab9e443ee68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UGFyaXMlMkMlMjBGcmFuY2V8ZW58MHx8MHx8fDA%3D">
                         </div>
                     </div>
 
@@ -124,7 +178,7 @@
                 <div class="card">
                     <div class="zoom-img">
                         <div class="img-card">
-                            <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293955/monaco_usu7xb.jpg">
+                            <img src="https://images.unsplash.com/photo-1575540121783-60f174302cc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bW9uYWNvfGVufDB8fDB8fHww">
                         </div>
                     </div>
 
@@ -143,7 +197,7 @@
                     <div class="zoom-img">
                         <div class="img-card">
                             <img
-                                src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293874/switzerland_tubxcm.jpg">
+                                src="https://images.unsplash.com/photo-1462651567147-aa679fd1cfaf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFN3aXR6ZXJsYW5kfGVufDB8fDB8fHww">
                         </div>
                     </div>
 
@@ -161,7 +215,7 @@
                 <div class="card">
                     <div class="zoom-img">
                         <div class="img-card">
-                            <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293673/korea_bxrcj5.jpg">
+                            <img src="https://media.istockphoto.com/id/621371796/ko/%EC%82%AC%EC%A7%84/%EC%84%9C%EC%9A%B8%EC%8B%9C%ED%8B%B0-%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%9D%BC%EC%9D%B8%EC%9D%BC%EB%AA%B0.webp?b=1&s=170667a&w=0&k=20&c=wC9eOfj4JuQW3uRrQ_6pdoVVUmahle0OJVIQd09Sgak=">
                         </div>
                     </div>
 
@@ -180,7 +234,7 @@
                     <div class="zoom-img">
                         <div class="img-card">
                             <img
-                                src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293673/night-4336403_1920_demehp.jpg">
+                                src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFRva3lvfGVufDB8fDB8fHww">
                         </div>
                     </div>
 
@@ -199,7 +253,7 @@
         <!--===========About Us===============-->
         <section class="about">
             <div class="about-img">
-                <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293719/outdoor_tjjhxk.jpg">
+                <img src="https://plus.unsplash.com/premium_photo-1684407616508-b9e82c8bc8a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHJpcHxlbnwwfHwwfHx8MA%3D%3D">
             </div>
             <div class="about-text">
                 <small>ABOUT OUR COMPANY</small>
@@ -212,7 +266,7 @@
                 <label><input type="checkbox" checked>consectetur adipisicing elit</label>
                 <label><input type="checkbox" checked>Architecto atque consequuntur</label>
                 <label><input type="checkbox" checked>cupiditate doloremque ducimus</label>
-                <a href="#">ABOUT US</a>
+                <a href="./index.html"><span class="glyphicon glyphicon-eject"></span> Home</a></li>
             </div>
         </section>
 
@@ -240,6 +294,677 @@
                 </ul>
             </div>
         </div>
+        <style>@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+            
+            * {
+              box-sizing: border-box;
+              margin: 0;
+            }
+            body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+   
+}
+
+            
+            /*------------------------Scroll Bar-----------------------*/
+            ::-webkit-scrollbar {
+              width: 20px;
+            }
+            
+            ::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 5px grey;
+              border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+              background-color: #fde65e;
+              border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+              background-color: #fde02f;
+            }
+            
+            /*========================Nav Bar=========================*/
+            .nav-bar {
+              display: flex;
+              flex-flow: row wrap;
+              width: 100%;
+              height: 90px;
+              background-color: #fff;
+              box-shadow: 3px 3px 10px lightslategray;
+              align-items: center;
+              justify-content: center;
+              position: sticky;
+              top: 0;
+              z-index: 1;
+            }
+            
+            .logo {
+              flex: 1;
+              font-size: 40px;
+              padding: 20px;
+              margin-left: 10px;
+              font-family: Satisfy;
+            }
+            
+            ul.menu {
+              flex: 0.3;
+              display: flex;
+              flex-flow: row wrap;
+             
+
+
+            }
+            
+            .menu li {
+              flex: 1;
+              list-style-type: none;
+              font-size: 16px;
+              font-family: "Barlow Condensed";
+              text-align: right;
+              margin-right: 70px; /* Adjust the margin as needed */
+            }
+            
+            .menu li a {
+              text-decoration: none;
+              color: #000;
+              text-transform: uppercase;
+            }
+            
+            .menu li a:hover {
+              color: midnightblue;
+              text-decoration: underline;
+            }
+            
+            /*=============================Banner=============================*/
+            .banner {
+              background-image: url("https://res.cloudinary.com/dxssqb6l8/image/upload/v1605294054/young-woman-enjoying-beautiful-scenery-of-lago-di-braies-italy-picjumbo-com_aa0fvw.jpg");
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              /*overflow: hidden;*/
+              width: 100%;
+              height: 100vh;
+              text-align: center;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            
+            .banner::before {
+              content: "";
+              position: absolute;
+              display: block;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+             background-image: url("https://images.unsplash.com/photo-1554904780-9ac4bdfa6a69?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+              /*background-size: 100%;*/
+            }
+            
+            .banner-text-item {
+              position: absolute;
+              width: 100%;
+              text-align: center;
+              display: flex;
+              flex-flow: column wrap;
+              justify-content: center;
+              align-items: center;
+            }
+            
+            .banner-heading {
+              flex: 1;
+            }
+            
+            .banner-heading h1 {
+              font-size: 100px;
+              font-weight: normal;
+              color: #fde02f;
+              font-family: Satisfy;
+              text-shadow: 2px 2px 4px rgba(0, 0, 1, 0.5);
+            }
+            
+            .banner-text-item .form {
+              flex: 1;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: center;
+              align-items: center;
+              background-color: rgba(255, 255, 255, 0.2);
+              border-radius: 5px;
+              width: 70%;
+              padding: 1% 2%;
+            }
+            
+            .banner-text-item input,
+            .banner-text-item .date,
+            .banner-text-item .book {
+              padding: 15px;
+              margin-right: 10px;
+              font-size: 18px;
+              font-family: Roboto;
+              border-radius: 5px;
+              outline: 0;
+              border: none;
+            }
+            
+            .banner-text-item input {
+              width: 50%;
+              flex: 2;
+            }
+            
+            .banner-text-item .date {
+              width: 20%;
+              flex: 1;
+            }
+            
+            .banner-text-item .book {
+              width: 20%;
+              flex: 1;
+            }
+            
+            .banner-text-item .book {
+              text-decoration: none;
+              color: #000;
+              text-transform: uppercase;
+              padding: 15px;
+              cursor: pointer;
+              background-color: #fde02f;
+              font-size: 16px;
+              font-weight: normal;
+              font-family: "Barlow Condensed";
+              width: 20%;
+            }
+            
+            /*===========================Services===========================*/
+            .services {
+              display: flex;
+              flex-flow: row;
+              align-items: center;
+              justify-content: center;
+            }
+            
+            .service-item {
+              flex: 1;
+              padding: 50px 10px;
+              border: lightcyan solid 1px;
+              text-align: center;
+              margin: 180px 50px;
+              transition: all 1s;
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+              justify-content: center;
+            }
+            
+            .service-item:hover {
+              box-shadow: 3px 3px 20px lightsteelblue;
+            }
+            
+            .service-item h2 {
+              font-family: Barlow Condensed;
+              font-size: 18px;
+              width: 120px;
+              color: #001f38;
+              flex: 1;
+            }
+            
+            .service-item img {
+              width: 150px;
+              height: 150px;
+              flex: 1;
+            }
+            
+            /*=============================Places===============================*/
+            .places-text {
+              text-align: center;
+              margin-bottom: 50px;
+            }
+            
+            .places-text small {
+              font-family: Roboto;
+              color: #ffc342;
+              font-size: 15px;
+              font-weight: bolder;
+            }
+            
+            .places-text h2 {
+              font-family: Barlow Condensed;
+              font-size: 55px;
+              color: #191d34;
+              letter-spacing: 1px;
+            }
+            
+            .cards {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+              grid-gap: 30px;
+              align-items: center;
+              justify-items: center;
+              text-align: center;
+            }
+            
+            .card {
+              border: 1px solid lightgray;
+              box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+              border-top-left-radius: 8px;
+              border-top-right-radius: 8px;
+              width: 80%;
+              height: auto;
+            }
+            
+            .card img {
+              max-width: 100%;
+              height: 80%;
+              border-radius: 8px;
+              cursor: pointer;
+            }
+            
+            .cards .text {
+              padding: 20px;
+              font-family: Barlow Condensed;
+              line-height: 50px;
+            }
+            
+            .cards .card-box {
+              display: flex;
+              flex-flow: row;
+              background-color: #fde02f;
+              font-size: 18px;
+              font-family: Roboto;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+            }
+            
+            .cards .time {
+              flex: 1;
+            }
+            
+            .cards .location {
+              flex: 2;
+            }
+            
+            .cards .cost {
+              color: #4cafad;
+              font-size: 20px;
+            }
+            
+            /*------------Zoom in Photos--------------*/
+            .zoom-img {
+              float: left;
+              position: relative;
+              width: 100%;
+              height: 320px;
+              overflow: hidden;
+            }
+            
+            .zoom-img .img-card {
+              position: absolute;
+              overflow: hidden;
+            }
+            
+            .img-card img {
+              -webkit-transition: 0.8s ease;
+              transition: 0.8s ease;
+            }
+            
+            .card:hover .zoom-img img {
+              -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+            }
+            
+            /*=========================About Us=========================*/
+            .about {
+              display: flex;
+              flex-flow: row wrap;
+              align-items: center;
+              justify-content: center;
+              padding: 150px;
+            }
+            
+            .about-img {
+              flex: 1;
+            }
+            
+            .about-img img {
+              width: 500px;
+              height: 700px;
+              box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+            }
+            
+            .about-text {
+              flex: 1;
+              /*width: 100px;*/
+              display: flex;
+              flex-flow: column wrap;
+            }
+            
+            .about-text small,
+            .about-text p,
+            .about-text input,
+            .about-text a {
+              flex: 1;
+              font-family: Roboto;
+            }
+            
+            .about-text small {
+              color: #ffc342;
+              font-size: 18px;
+            }
+            
+            .about-text h2 {
+              flex: 1;
+              font-family: Barlow Condensed;
+              font-size: 60px;
+              color: #191d34;
+              width: 450px;
+            }
+            
+            .about-text label {
+              padding-bottom: 10px;
+              color: #506172;
+              font-weight: bolder;
+              font-family: Roboto;
+              letter-spacing: 1px;
+            }
+            
+            .about-text p {
+              width: 500px;
+              line-height: 30px;
+              color: #506172;
+              font-weight: bolder;
+              padding: 50px 0;
+            }
+            
+            .about-text a {
+              background-color: #fff;
+              border: 2px solid #014b85;
+              text-decoration: none;
+              border-radius: 5px;
+              width: 180px;
+              padding: 20px;
+              text-align: center;
+              margin-top: 50px;
+              color: #014b85;
+              font-weight: bolder;
+              font-size: 14px;
+            }
+            
+            .about-text a:hover {
+              background-color: #014b85;
+              color: #fff;
+            }
+            
+            /*===============Footer===================*/
+            .footer {
+              background-image: url("https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293781/pine-tree_mq2sgp.jpg");
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              width: 100%;
+              height: 670px;
+              position: relative;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: center;
+              align-items: center;
+            }
+            
+            .footer::before {
+              position: absolute;
+              content: "";
+              display: block;
+              background-color: rgba(0, 0, 36, 0.8);
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+            }
+            
+            .footer .links {
+              position: relative;
+              color: #fff;
+              flex: 1;
+              display: flex;
+              flex-flow: column;
+              justify-content: center;
+              align-items: center;
+            }
+            
+            .links ul {
+              list-style-type: none;
+            }
+            
+            .links h3 {
+              font-family: Barlow Condensed;
+              font-weight: normal;
+              font-size: 23px;
+              margin-bottom: 15px;
+            }
+            
+            .links li {
+              font-family: Roboto;
+              cursor: pointer;
+              padding: 15px 0;
+            }
+            
+            .links li:hover {
+              color: #ffa801;
+            }
+            
+            /*==========================Responsive=============================*/
+            @media all and (max-width: 1172px) {
+              .banner-text-item .form {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+              }
+            
+              .banner-text-item .form input,
+              .banner-text-item .form .date,
+              .banner-text-item .form a {
+                flex: 1;
+                margin-bottom: 5px;
+                font-size: 14px;
+              }
+            
+              .banner-text-item .form input {
+                width: 60%;
+              }
+            
+              .banner-text-item .form .date {
+                width: 30%;
+              }
+            
+              .banner-text-item .form .book {
+                width: 10%;
+                font-size: 14px;
+              }
+            
+              .banner-heading h1 {
+                font-size: 60px;
+              }
+            }
+            
+            @media all and (max-width: 1414px) {
+              .banner-text-item .form input {
+                width: 40%;
+              }
+            
+              .banner-text-item .form .date {
+                width: 30%;
+              }
+            
+              .banner-text-item .form .book {
+                width: 20%;
+                font-size: 14px;
+              }
+            }
+            
+            @media all and (max-width: 942px) {
+              .nav-bar {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: auto;
+                text-align: center;
+                position: static;
+              }
+            
+              .logo {
+                flex: 1;
+                font-size: 30px;
+                margin: 10px auto;
+                font-family: Satisfy;
+                color: #fde02f;
+              }
+            
+              .nav-bar ul {
+                display: none;
+              }
+            
+              .nav-bar ul li {
+                flex: 1;
+                margin-bottom: 5px;
+                font-size: 14px;
+              }
+            
+              .services {
+                display: flex;
+                flex-flow: column wrap;
+              }
+            
+              .services .service-item {
+                flex: 1;
+                margin-bottom: -130px;
+                width: 400px;
+              }
+            
+              .places-text {
+                margin-top: 200px;
+              }
+            }
+            
+            @media all and (max-width: 928px) {
+              .banner .form input,
+              a {
+                font-size: 12px;
+              }
+            }
+            
+            @media all and (max-width: 1173px) {
+              .banner .form {
+                background-color: transparent;
+              }
+            }
+            
+            @media all and (max-width: 1194px) {
+              .places .card-box p {
+                font-size: 14px;
+              }
+            }
+            
+            @media all and (max-width: 1086px) {
+              .places .cards .text {
+                line-height: 40px;
+              }
+            
+              .cards .text .h2 {
+                font-size: 12px;
+              }
+            
+              .cards .img-card img {
+                height: 260px;
+              }
+            }
+            
+            @media all and (max-width: 974px) {
+              .cards {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                grid-gap: 20px;
+              }
+            
+              .card {
+                width: 300px;
+                height: 500px;
+                margin: auto;
+              }
+            
+              .cards .text {
+                padding: 5px;
+                font-family: Barlow Condensed;
+              }
+            }
+            
+            @media all and (max-width: 1334px) {
+              .about-img img {
+                width: 300px;
+                height: 500px;
+              }
+            }
+            
+            @media all and (max-width: 1116px) {
+              .about {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+              }
+            
+              .about-img {
+                flex: 1;
+                margin-bottom: 20px;
+              }
+            
+              .about-text {
+                flex: 1;
+                margin: auto;
+                text-align: center;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+              }
+            
+              .about-text h2 {
+                font-size: 35px;
+              }
+            
+              .about-img img {
+                width: 400px;
+                height: 400px;
+              }
+            }
+            
+            @media all and (max-width: 708px) {
+              .footer {
+                width: 100%;
+                height: 670px;
+                position: relative;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+            </style>
     </body>
 
 </html>
